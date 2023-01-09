@@ -1,38 +1,62 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
+import { HiMoon } from "react-icons/hi";
 import "./App.scss";
+import { AiOutlineSearch } from "react-icons/ai";
+import SearchBox from "./components/SearchBox";
 
 function App() {
   const [count, setCount] = useState(0);
   return (
     <div className="App">
-      <div class="wrapper">
-        <div class="header">Header</div>
-        <div class="sidebar">Sidebar</div>
-        <div class="content">Content</div>
-        <div class="footer">Footer</div>
-      </div>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
+      {/* <header>
+       
+        <a class="logo" href="#">
+          Cute Puppies Express!
         </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      </header> */}
+      <header>
+        <element className="One">Where in the world?</element>
+        <div className="darkModeContainer">
+          <span>
+            <HiMoon
+              className="icon_dark_mode"
+              width="20"
+              height="20"
+              title="sdsa"
+              alt="dsfsf"
+            ></HiMoon>
+          </span>
+
+          <span className="darkModeText">Dark Mode</span>
+        </div>
+
+        {/* <time>08.12.2014</time> */}
+      </header>
+      {/* <div className="search-box">
+        <span>
+          <input
+            type="text"
+            className="search-box__input"
+            placeholder="Search for a country..."
+          />
+        </span>
+      </div> */}
+      <SearchBox />
+      const rivka = <Welcome name="Sara" age="16" />
+      {/* <p>
+        I love beagles <em>so</em> much! Like, really, a lot. They’re adorable
+        and their ears are so, so snuggly soft!
+      </p> */}
     </div>
+  );
+}
+
+function Welcome(props) {
+  return (
+    <h1>
+      Hello, {props.name}, {props.age}
+    </h1>
   );
 }
 

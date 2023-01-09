@@ -1,8 +1,15 @@
+@import "./styles/variables.scss";
+
 #root {
-  max-width: 1280px;
+  // max-width: 1440px;
+  // make elements in center
   margin: 0 auto;
-  padding: 2rem;
+  // padding: 2rem;
   text-align: center;
+  position: relative;
+  width: 1440px;
+  height: 1024px;
+  background-color: #f2f2f2;
 }
 
 .logo {
@@ -41,26 +48,207 @@
 }
 
 .header {
-  grid-area: hd;
+  background: #ffffff;
 }
 
 .footer {
   grid-area: ft;
 }
 .content {
-  grid-area: main;
+  position: absolute;
 }
 .sidebar {
   grid-area: sd;
 }
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  grid-auto-rows: minmax(100px, auto);
-  grid-template-areas:
-    "hd hd hd hd   hd   hd   hd   hd   hd"
-    "main main main main main main main main main"
-    "ft ft ft ft   ft   ft   ft   ft   ft";
-    width: 1440px;
-    height: 1024px;
+// .wrapper {
+//   display: grid;
+//   grid-template-columns: repeat(9, 1fr);
+//   grid-auto-rows: minmax(100px, auto);
+//   grid-template-areas:
+//     "hd hd hd hd   hd   hd   hd   hd   hd"
+//     "main main main main main main main main main"
+//     "ft ft ft ft   ft   ft   ft   ft   ft";
+//     width: 1440px;
+//     height: 1024px;
+// }
+
+.logo {
+  background: left / cover url("/media/examples/puppy-header-logo.jpg");
+  display: flex;
+  height: 120px;
+  align-items: center;
+  justify-content: center;
+  font: bold calc(1em + 2 * (100vw - 120px) / 100) "Dancing Script", fantasy;
+  color: #ff0083;
+  text-shadow: #000 2px 2px 0.2rem;
+}
+header {
+  position: absolute;
+  width: 1440px;
+  height: 80px;
+  left: 0px;
+  top: 0px;
+  background: #ffffff;
+}
+
+header > h1 {
+  margin-bottom: 0;
+}
+
+header > time {
+  font: italic 0.7rem sans-serif;
+}
+
+element {
+  /* Where in the world? */
+
+  // position: absolute;
+  // height: 33px;
+  // left: 5.62%;
+  // right: 78.4%;
+  // top: calc(50% - 33px/2 - 0.5px);
+
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  /* identical to box height */
+}
+
+element.One {
+  position: absolute;
+  height: 33px;
+  left: 5.62%;
+  right: 78.4%;
+  top: calc(50% - 33px / 2 - 0.5px);
+}
+
+input {
+  position: absolute;
+  height: 22px;
+  left: 25.93%;
+  right: 50%;
+  top: calc(50% - 22px / 2);
+
+  color: #111517;
+}
+
+/**
+ * TOGGLERS 
+ */
+#toggleMode {
+  visibility: hidden;
+}
+
+.toggleDark,
+.toggleLight {
+  cursor: pointer;
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  left: 20px;
+}
+
+.toggleDark {
+  display: block;
+  color: #222;
+}
+
+.toggleDark:hover {
+  color: blue;
+}
+
+.toggleLight {
+  display: none;
+  color: white;
+}
+
+#toggleMode:checked ~ .toggleDark {
+  display: none;
+}
+
+#toggleMode:checked ~ .toggleLight {
+  display: block;
+}
+
+/**
+ * CONTAINER 
+ */
+#container {
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  // bottom: 0;
+  position: absolute;
+  left: 86.94%;
+  right: 5.56%;
+  top: 36.25%;
+  bottom: 36.25%;
+  background-color: var(--bg);
+  z-index: 1;
+  // padding: 50px 20px;
+}
+
+#toggleMode:checked ~ #container {
+  --bg: #020202;
+  --panel-bg: #111413;
+  --panel-border: #1f2322;
+  --panel-title: #8e9294;
+  --panel-text: #505456;
+  --btn: #2962fe;
+
+  background-color: var(--bg);
+}
+
+label {
+  position: absolute;
+  height: 22px;
+  left: 25.93%;
+  right: 0%;
+  top: calc(50% - 22px / 2);
+
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  /* identical to box height */
+
+  color: #111517;
+}
+
+div.darkModeContainer {
+  position: absolute;
+  left: 86.94%;
+  right: 5.56%;
+  top: 36.25%;
+  bottom: 36.25%;
+}
+
+.icon_dark_mode {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 0px;
+  top: 0px;
+  color: #000;
+}
+
+.darkModeText {
+  position: absolute;
+  height: 22px;
+  left: 25.93%;
+  right: 0%;
+  top: calc(50% - 22px / 2);
+
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  /* identical to box height */
+
+  color: #111517;
 }
